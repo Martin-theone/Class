@@ -1,0 +1,80 @@
+Here’s a simple example of a C# class to help you understand its structure and functionality:
+
+Copy the code
+using System;
+
+namespace ExampleNamespace
+{
+    // Define a class
+    public class Person
+    {
+        // Fields (private by default)
+        private string name;
+        private int age;
+
+        // Constructor
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Property for Name
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        // Property for Age
+        public int Age
+        {
+            get { return age; }
+            set 
+            { 
+                if (value >= 0) 
+                    age = value; 
+                else 
+                    throw new ArgumentException("Age cannot be negative.");
+            }
+        }
+
+        // Method
+        public void Introduce()
+        {
+            Console.WriteLine($"Hi, my name is {name} and I am {age} years old.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create an instance of the Person class
+            Person person = new Person("Alice", 25);
+
+            // Access properties
+            Console.WriteLine($"Name: {person.Name}");
+            Console.WriteLine($"Age: {person.Age}");
+
+            // Call a method
+            person.Introduce();
+
+            // Modify properties
+            person.Name = "Bob";
+            person.Age = 30;
+
+            // Call the method again
+            person.Introduce();
+        }
+    }
+}
+
+Explanation:
+Class Definition: The Person class encapsulates fields, properties, and methods.
+Constructor: Initializes the object with specific values.
+Properties: Provide controlled access to private fields.
+Methods: Define behaviors or actions the class can perform.
+Main Method: Demonstrates how to create and use the Person class.
+
+This is a foundational example, but C# classes can be extended with inheritance, interfaces, and more advanced features! Let me know if you'd like to explore further.
